@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAA - PMV</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fontawesome.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Logo.png" alt="School Gesture Logo" class="logo-img">
+            <h1 class="logo-text">Sistema de Información Académico Administrativo</h1>
+            </div>
+            <div class="profile-wrapper">
+            <div class="user-info">
+                <div class="user-text">
+                    <span class="user-name">Juan Carlos Bodoque</span>
+                    <span class="user-sub-role">Alumno</span>
+                </div>
+                
+                <div class="profile-picture" id="profile-toggler">
+                    <img src="bodoque.jpg">
+                </div>
+            </div>
+
+            <div class="profile-actions" id="profile-actions-menu" >
+                
+                <a href="#" class="action-button">
+                    <div class="button-icon help"></div>
+                    Recibir Ayuda
+                </a>
+                
+                <a href="/gestion_escolar/index.php?p=logout" id="logout-button" class="action-button">
+                    <div class="button-icon logout"></div>
+                    Cerrar Sesion
+                </a>
+            </div>
+        </div>
+    </div>
+    </header>
+    
+    <nav class="main-nav">
+        <button class="nav-button active" data-vista="inicio">Inicio</button>
+        <button class="nav-button" data-vista="info-personal">Info Personal</button>
+        <button class="nav-button" data-vista="horario">Horario</button>
+        <button class="nav-button" data-vista="calificaciones">Calificaciones</button>
+        <button class="nav-button" data-vista="solicitar-documentos">Solicitar Documentos</button>
+        <button class="nav-button" data-vista="reinscripcion-extraordinarios">Reinscripción y Extraordinarios</button>
+    </nav>
+    <main id="contenido-principal">
+
+        <section id="inicio" class="vista activa">
+            <h2>Inicio</h2>
+            <p>Bienvenido al Sistema de Información Académico Administrativo.</p>
+        </section>
+
+        <section id="solicitar-documentos" class="vista">
+            <h2 class="document-title">Solicitud de documentos</h2>
+            <p class="document-subtitle">
+                Selecciona el documento que deseas solicitar:
+            </p>
+            <div class="document-list">
+                <label class="document-item">
+                    <input type="radio" name="documento" value="Duplicado de credencial">
+                    Duplicado o reposición de credencial
+                </label>
+
+                <label class="document-item">
+                <input type="radio" name="documento" value="Constancia de estudios">
+                    Constancia de estudios electrónica
+                </label>
+
+                <label class="document-item">
+                    <input type="radio" name="documento" value="Carta descriptiva">
+                    Emisión de cartas descriptivas
+                </label>
+
+                <label class="document-item">
+                    <input type="radio" name="documento" value="Copia archivo">
+                    Copia de documento en archivo existente
+                </label>
+
+                <label class="document-item">
+                    <input type="radio" name="documento" value="ECRII">
+                    Constancia de resultados de examen ECRII
+                </label>
+            </div>
+
+            <button class="request-btn openPaymentModal" disabled>
+                Continuar con pago
+            </button>
+        </section>
+        
+
+
+        <section id="reinscripcion-extraordinarios" class="vista">
+            <h2 class="document-title">Reinscripción y Extraordinarios</h2>
+            <p class="document-subtitle">
+                Selecciona el trámite que deseas realizar:
+            </p>
+                <label class="document-item">
+                    <input type="radio" name="documento" value="Inscripción o Reinscripción" >
+                    Inscripción o Reinscripción
+                </label>
+            <div class="document-list">
+                <label class="document-item">
+                    <input type="radio" name="documento" value="Exámenes Extraordinarios o de Regularización" id="extraOption">
+                    Exámenes Extraordinarios o de Regularización
+                </label>
+                <div class="extra-submenu" id="extraSubmenu">
+                    <p class="extra-title">Selecciona hasta 3 materias:</p>
+                    <div id="extraMaterias"></div>
+                </div>
+            </div>
+            <button class="request-btn openPaymentModal" disabled>
+                Continuar
+            </button>
+        </section>
+
+
+        <section id="horario" class="vista">
+
+            <div class="horario-header">
+                <p><strong>Programa:</strong> 013 INGENIERÍA EN TECNOLOGÍAS DE LA INFORMACIÓN E INNOVACIÓN DIGITAL</p>
+                <p><strong>Periodo:</strong> 2026-1</p>
+                <p><strong>Grupo:</strong> 5AV</p>
+            </div>
+
+            <div class="horario-contenedor">
+
+                <!-- TABLA PRINCIPAL -->
+                <table class="tabla-horario">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>S</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td >4:00 PM <br> 5:00 PM</td>
+                            <td>Aplicaciones Web<br><small>Cota Rivera Elia Ivette</small></td>
+                            <td>Aplicaciones Web<br><small>Cota Rivera Elia Ivette</small></td>
+                            <td>Liderazgo de Equipos<br><small>Reyes Medina Héctor</small></td>
+                            <td>Bases de Datos Avanzadas<br><small>López Aguirre Alicia</small></td>
+                            <td>Bases de Datos Avanzadas<br><small>López Aguirre Alicia</small></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>5:00 PM <br> 6:00 PM</td>
+                            <td>Aplicaciones Web<br><small>Cota Rivera Elia Ivette</small></td>
+                            <td>Aplicaciones Web<br><small>Cota Rivera Elia Ivette</small></td>
+                            <td>Liderazgo de Equipos<br><small>Reyes Medina Héctor</small></td>
+                            <td>Bases de Datos Avanzadas<br><small>López Aguirre Alicia</small></td>
+                            <td>Bases de Datos Avanzadas<br><small>López Aguirre Alicia</small></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>6:00 PM <br> 7:00 PM</td>
+                            <td>Estándares y Métricas<br><small>Naranjo Álvarez Jesús</small></td>
+                            <td>Aplicaciones Web<br><small>Cota Rivera Elia Ivette</small></td>
+                            <td>Ecuaciones Diferenciales<br><small>Ortega Cecena Luis</small></td>
+                            <td>Estándares y Métricas<br><small>Naranjo Álvarez Jesús</small></td>
+                            <td>Proyecto Integrador II<br><small>Alemán Escobedo Gloria</small></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>7:00 PM <br> 8:00 PM</td>
+                            <td>Estándares y Métricas<br><small>Naranjo Álvarez Jesús</small></td>
+                            <td>Ecuaciones Diferenciales<br><small>Ortega Cecena Luis</small></td>
+                            <td>Ecuaciones Diferenciales<br><small>Ortega Cecena Luis</small></td>
+                            <td>Estándares y Métricas<br><small>Naranjo Álvarez Jesús</small></td>
+                            <td>Proyecto Integrador II<br><small>Alemán Escobedo Gloria</small></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>8:00 PM <br> 9:00 PM</td>
+                            <td>Inglés Nivel V<br><small>López Salgado Gonzalo</small></td>
+                            <td>Inglés Nivel V<br><small>López Salgado Gonzalo</small></td>
+                            <td>Proyecto Integrador II<br><small>Alemán Escobedo Gloria</small></td>
+                            <td>Ecuaciones Diferenciales<br><small>Ortega Cecena Luis</small></td>
+                            <td>Liderazgo de Equipos<br><small>Reyes Medina Héctor</small></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>9:00 PM <br> 10:00 PM</td>
+                            <td>Inglés Nivel V<br><small>López Salgado Gonzalo</small></td>
+                            <td>Inglés Nivel V<br><small>López Salgado Gonzalo</small></td>
+                            <td>Proyecto Integrador II<br><small>Alemán Escobedo Gloria</small></td>
+                            <td>Ecuaciones Diferenciales<br><small>Ortega Cecena Luis</small></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- PANEL LATERAL -->
+                <aside class="panel-materias">
+                    <table class="tabla-materias">
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Horas</th>
+                                <th>Docente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aplicaciones Web</td>
+                                <td>5</td>
+                                <td>Cota Rivera Elia Ivette</td>
+                            </tr>
+                            <tr>
+                                <td>Estándares y Métricas</td>
+                                <td>4</td>
+                                <td>Naranjo Álvarez Jesús</td>
+                            </tr>
+                            <tr>
+                                <td>Ecuaciones Diferenciales</td>
+                                <td>5</td>
+                                <td>Ortega Cecena Luis</td>
+                            </tr>
+                            <tr>
+                                <td>Liderazgo de Equipos</td>
+                                <td>3</td>
+                                <td>Reyes Medina Héctor</td>
+                            </tr>
+                            <tr>
+                                <td>Proyecto Integrador II</td>
+                                <td>4</td>
+                                <td>Alemán Escobedo Gloria</td>
+                            </tr>
+                            <tr>
+                                <td>Bases de Datos Avanzadas</td>
+                                <td>4</td>
+                                <td>López Aguirre Alicia</td>
+                            </tr>
+                            <tr>
+                                <td>Inglés Nivel V</td>
+                                <td>4</td>
+                                <td>López Salgado Gonzalo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </aside>
+
+            </div>
+
+        </section>
+        <section id="calificaciones" class="vista">
+
+            <h2>Calificaciones</h2>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Clave</th>
+                            <th>Materia</th>
+                            <th>Unidades Evaluadas</th>
+                            <th>Promedio</th>
+                            <th>Estado</th>
+                            <th>Detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaMaterias"></tbody>
+                </table>
+
+                <div class="promedio-general">
+                    Promedio General:
+                    <span id="promedioGeneral">0</span>
+                </div>
+
+            </div>
+            <!-- MODAL DETALLE -->
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="cerrarModal()">X</span>
+                    <h3 id="tituloModal"></h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Unidad</th>
+                                <th>Descripción</th>
+                                <th>Calificación</th>
+                                <th>Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detalleUnidades"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- MODAL DESGLOSE -->
+            <div class="modal-desglose" id="modalDesglose">
+                <div class="desglose-content">
+
+                    <div class="desglose-header">
+                        <h3>Desglose de Unidad</h3>
+                        <span class="cerrar-btn" onclick="cerrarDesglose()">X</span>
+                    </div>
+
+                    <div class="cards" id="contenedorCards"></div>
+
+                    <div class="promedio-final">
+                        Promedio Unidad:
+                        <span id="promedioUnidadFinal"></span>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <div class="payment-modal" id="paymentModal">
+            <div class="payment-modal-content" id="modalContent">
+                <h3>Método de pago</h3>
+                <p id="selectedDocument"></p>
+                <div class="payment-options">
+                    <button class="payment-btn online" id="payOnline">
+                        💳 Pago en línea
+                    </button>
+                    <button class="payment-btn window" id="payWindow">
+                        🏢 Pago en ventanilla
+                    </button>
+                </div>
+            <button class="close-modal" id="closeModal">
+                Cancelar
+            </button>
+            </div>
+        </div>
+</main>
+    
+        <script src="script.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</html>
